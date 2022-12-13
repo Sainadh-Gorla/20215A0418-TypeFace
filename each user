@@ -1,0 +1,6 @@
+SELECT apis.name
+FROM requests
+INNER JOIN apis ON requests.api_id = apis.id
+GROUP BY requests.api_id
+ORDER BY AVG(requests.response_time) DESC
+LIMIT 1;
