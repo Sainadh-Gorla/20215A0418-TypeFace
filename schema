@@ -1,0 +1,16 @@
+
+users:
+- id: INTEGER (primary key)
+- name: VARCHAR(255)
+
+apis:
+- id: INTEGER (primary key)
+- name: VARCHAR(255)
+
+requests:
+- id: INTEGER (primary key)
+- user_id: INTEGER (foreign key to users.id)
+- api_id: INTEGER (foreign key to apis.id)
+- request_time: DATETIME
+- response_time: INTEGER (in milliseconds)
+- success: BOOLEAN
